@@ -18,3 +18,8 @@ def maximum(arr):
     arr.sort()
     return arr[-1]
 
+def no_space(x):
+    for i in x:
+        if i == ' ':
+            x = x.replace(' ',"")
+    return x

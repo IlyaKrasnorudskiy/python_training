@@ -18,3 +18,5 @@ print(a)
 test = eval(a) #line 15
 print(test)
 #Побитовые операции
+x = 0b0001
+print(x<<2) #сдвиг влево
