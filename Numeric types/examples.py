@@ -1,3 +1,5 @@
+from decimal import Decimal
+from fractions import Fraction
 #comlex number
 print(1j * 1J)
 print(2+1j*3)
@@ -20,3 +22,12 @@ print(test)
 #Побитовые операции
 x = 0b0001
 print(x<<2) #сдвиг влево
+#основы десят чисел
+print(0.1+0.1+0.1-0.3)
+print(Decimal('0.1')+Decimal('0.1')+Decimal('0.1')-Decimal('0.3'))
+#дроби
+x = Fraction(1, 3)
+print(x)
+x+= 0.1
+print(x)
+#множества
