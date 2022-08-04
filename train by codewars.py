@@ -183,3 +183,89 @@ def high_and_low(numbers):
     string = str(max) + ' ' + str(min)
     return string
 
+
+def find_short(s):
+    k = 0
+    l = []
+    s+=' '
+    for i in s:
+        if i != ' ':
+            k+=1
+        else:
+            l.append(k)
+            k = 0
+    return min(l)
+print(find_short("bitcoin take over the world maybe who knows perhaps"))
+
+def count_by(x, n):
+    l = []
+    k = x
+    for i in range(1, n+1):
+        l.append(x)
+        x += k
+    return l
+
+print(count_by(1, 5))
+
+def bmi(weight, height):
+    bmi = weight/height**2
+    if bmi <= 18.5:
+        return "Underweight"
+
+    if bmi <= 25.0:
+        return "Normal"
+
+    if bmi <= 30.0:
+        return "Overweight"
+
+    if bmi > 30:
+        return "Obese"
+    return bmi
+
+def dna_to_rna(dna):
+    return dna.replace("T", "U")
+
+def double_char(s):
+    string = ''
+    for a in s:
+        string += a*2
+    return string
+
+
+def spin_words(sentence):
+    sentence += ' '
+    test = ''
+    l = []
+    string = ''
+    for i in range(0,len(sentence)):
+        if sentence[i] != ' ':
+            test+=sentence[i]
+        else:
+            l.append(test)
+            test = ''
+    print(l)
+    for i in range(0, len(l)):
+        if len(l[i]) >= 5:
+            l[i] = l[i][::-1]
+        string += l[i]
+        if l[i] != l[-1]:
+            string += ' '
+    return string
+print(spin_words("Hey fellow warriors"))
+
+
+def camel_case(string):
+    l = []
+    string+=' '
+    test = ''
+    st = ''
+    for i in range(0,len(string)):
+        if string[i] != ' ':
+            test+=string[i]
+        else:
+            l.append(test)
+            test =''
+    for a in l:
+        st += a.capitalize()
+    return st
+print(camel_case("camel case method"))
