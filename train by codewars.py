@@ -269,3 +269,25 @@ def camel_case(string):
         st += a.capitalize()
     return st
 print(camel_case("camel case method"))
+
+def goals(laLiga, copaDelRey, championsLeague):
+    return laLiga + copaDelRey + championsLeague
+
+def opposite(number):
+    return -number
+
+def positive_sum(arr):
+    sum = 0
+    for a in arr:
+        if a > 0:
+            sum += a
+    if sum == 0:
+        return 0
+    return sum
+
+def set_alarm(employed, vacation):
+    if employed > vacation:
+        return True
+    else:
+        return False
+
