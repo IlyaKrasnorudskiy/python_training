@@ -291,3 +291,56 @@ def set_alarm(employed, vacation):
     else:
         return False
 
+def get_sum(a, b):
+    if a == b:
+        return a
+    else:
+        return a + b
+
+def make_upper_case(s):
+    return s.upper()
+
+def smash(words):
+    s = ''
+    k = 0
+    for i in words:
+        if k == 0:
+            s += i
+            k+=1
+        else:
+            s+=' ' + i
+    return(s)
+
+def divisors(n):
+    k = 0
+    for i in range(1, n+1):
+        if n % i == 0:
+            k+=1
+    return k
+def square_sum(numbers):
+    sum = 0
+    for i in numbers:
+        sum += i*i
+    return sum
+def determinant(matrix):
+    if len(matrix) == 1:
+        return matrix[0][0]
+    if len(matrix) == 2:
+        return (matrix[0][0] * matrix[1][1]) - (matrix[0][1]* matrix[1][0])
+    if len(matrix) == 3:
+        return (matrix[0][0]*matrix[1][1]*matrix[2][2])+(matrix[0][1]*matrix[1][2]*matrix[2][0])+(matrix[1][0]*matrix[2][1]*matrix[0][2])-((matrix[0][2]*matrix[1][1]*matrix[2][0])+(matrix[1][0]*matrix[0][1]*matrix[2][2])+(matrix[1][2]*matrix[2][1]*matrix[0][0]))
+
+    def translate(a):
+        base = 16
+        s = ''
+        while a != 0:
+            s += str(a % base)
+            a = a // base
+            return str(s.reverse())
+
+    def rgb(r, g, b):
+        return translate(r) + translate(g) + translate(b)
+
+    print(rgb(255,255,255))
+
+

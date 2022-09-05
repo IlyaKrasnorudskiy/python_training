@@ -31,3 +31,16 @@ print(x)
 x+= 0.1
 print(x)
 #множества
+
+number = 999
+number_as_string = str(number)
+print(int(number_as_string[1]) + 2)
+num = 0
+s = ''
+num_str = str(num)
+for i in num_str:
+    s += str(int(i)*int(i))
+print(s)
+a = str(hex(255))
+a = a[2::].upper()
+print(hex(0))
