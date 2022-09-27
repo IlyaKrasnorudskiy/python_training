@@ -344,3 +344,25 @@ def determinant(matrix):
     print(rgb(255,255,255))
 
 
+def abbrev_name(name):
+    first = name[0].capitalize()
+    for i in range(0,len(name)):
+        if name[i] == ' ':
+            last = name[i+1].upper()
+    return str(first) + '.' + str(last)
+
+def string_to_array(s):
+    if s == "":
+        mas = []
+        mas.append(s)
+        return mas
+    return s.split()
+
+def fake_bin(x):
+    for i in x:
+        if int(i) < 5:
+            x = x.replace(i, '0', 1)
+        else:
+            x = x.replace(i, '1', 1)
+    return x
+print(fake_bin("45385593107843568"))

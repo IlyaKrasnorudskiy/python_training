@@ -44,3 +44,19 @@ print(s)
 a = str(hex(255))
 a = a[2::].upper()
 print(hex(0))
+s = ''
+mas = []
+mas.append(s)
+print(mas)
+#преобразование дробей
+print(2.5.as_integer_ratio())
+#множества
+x = set('abcabcabc')
+y = set('bsbdsasafabcabcabc')
+print(x)
+print(y)
+print(y-x)
+print(x | y)
+print(x & y)
+print({x**2 for x in [1,2,3,4]})
+print(2*(3+4))
