@@ -60,3 +60,11 @@ print(x | y)
 print(x & y)
 print({x**2 for x in [1,2,3,4]})
 print(2*(3+4))
+L1 = [1,2,3]
+L2 = L1
+L1[0] = 3
+print(L1, L2)
+L1 = [1,2,3]
+L2 = L1[:]
+L1[0] = 2
+print(L1, L2)
