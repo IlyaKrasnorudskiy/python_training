@@ -29,3 +29,47 @@ def even_or_odd(number):
         return 'Even'
     else:
         return 'Odd'
+
+
+def solution(string, ending):
+    string = string[:2:-1]
+    if ending in string:
+        return True
+    else:
+        return False
+
+def min_max(lst):
+    maxs = max(lst)
+    mins = min(lst)
+    arr = []
+    arr.append(mins)
+    arr.append(maxs)
+    return arr
+
+def expanded_form(num):
+    num = str(num)
+    mas_categories = []
+    k = 0
+    for i in num:
+        k+=1
+        if i == '0':
+            continue
+        number = i + (len(num)-k) * '0'
+        print(number)
+        mas_categories.append(number)
+    mas_categories_str = " + ".join(mas_categories)
+    return mas_categories_str
+
+def odd_or_even(arr):
+    if sum(arr) % 2 == 0:
+        return 'even'
+    else:
+        return 'odd'
+
+def cockroach_speed(s):
+    return int((s * 1000*100) / (3600))
+
+def litres(time):
+    return int(time*0.5)
+
+
