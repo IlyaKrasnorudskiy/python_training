@@ -73,3 +73,15 @@ def litres(time):
     return int(time*0.5)
 
 
+base = 3
+print('----------')
+
+for i in range(1, 16):
+    a = i
+    k+=1
+    s =''
+    while a != 0:
+        s += str(a%base)
+        a = a//base
+    print(s[::-1])
+

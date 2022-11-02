@@ -26,3 +26,10 @@ print(mas_categories_str)
 s = 1.08
 s = (s * 1000*100) / (3600)
 print(int(s))
+
+#коды символов
+print(ord('s'))
+print(chr(115))
+s = '5'
+s = chr(ord(s)+1)
+print(s)
