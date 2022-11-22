@@ -23,5 +23,13 @@ print(s)
 
 O = json.loads(s)
 print(O)
+L = [None]*100
+print(L)
+#Можно использовать на проверке занятости
+print(bool('2'))
 
+#Проверка типов
+l = [1]
+print(type(l))
+print(isinstance(l,list))
 
