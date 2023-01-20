@@ -24,3 +24,14 @@ def increment_string(strng):
 
 print(increment_string("aaaa77"))
 print(increment_string("aaaa099"))
+
+def zeros(n):
+    count = 0
+    i = 5
+    while (n / i>= 1):
+      count += int(n / i)
+      i *= 5
+    return int(count)
+
+
+print(zeros(300000))
