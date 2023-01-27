@@ -35,3 +35,25 @@ def zeros(n):
 
 
 print(zeros(300000))
+
+
+def disemvowel(string_):
+    l = ["I", "i", "e", "E", "a", "A", "U", "u", "O", "o"]
+    for i in string_:
+        if i in l:
+            string_ = string_.replace(i, '')
+    return string_
+
+
+print(disemvowel('%ppopi[aayL"IeIe]yo|UE#ZeeuS=i~aui[@.o'))
+
+def series_sum(n):
+    start = 1
+    step = 4
+    for i in range(1, n):
+        if i == 1:
+            start += 1/step
+            continue
+        start += 1 / (step+3)
+    return str(round(start,2))
+print(series_sum(4))
