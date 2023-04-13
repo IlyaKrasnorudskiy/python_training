@@ -3,8 +3,8 @@ from PIL import Image, ImageDraw, ImageFont
 # Получаем имя и фото из словаря
 cards = {
     'День Рождения': 'my_image.jpg',
-    'Новый Год': 'my_image1.jpg',
-    'День Святого Валентина': 'my_image2.jpg'
+    'Новый Год': 'my_image2.jpg',
+    'День Святого Валентина': 'my_image1.jpg'
 }
 
 holiday = input("Введите название праздника: ")

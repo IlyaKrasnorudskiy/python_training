@@ -4,8 +4,8 @@ from PIL import Image
 # Создаем словарь пар "название праздника - имя файла"
 cards = {
     'День Рождения': 'my_image.jpg',
-    'Новый Год': 'my_image1.jpg',
-    'День Святого Валентина': 'my_image2.jpg'
+    'Новый Год': 'my_image2.jpg',
+    'День Святого Валентина': 'my_image1.jpg'
 }
 
 # Запрашиваем у пользователя название праздника
@@ -19,7 +19,7 @@ if filename is None:
     print('Открытки для данного праздника нет')
 else:
     # Получаем полный путь до файла открытки
-    filepath = os.path.join('cards', filename)
+    filepath = filename
 
     # Открываем файл открытки
     with Image.open(filepath) as img:

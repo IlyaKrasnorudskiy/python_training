@@ -18,7 +18,7 @@ for filename in files:
 
     # Добавляем текст в центр изображения
     text = "Watermark"
-    textwidth, textheight = draw.textsize(text, font)
+    textwidth, textheight = draw.textbbox((0, 0, width, height), text, font=font)
     x = (width - textwidth) / 2
     y = (height - textheight) / 2
     draw.text((x, y), text, font=font)
