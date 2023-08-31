@@ -16,3 +16,8 @@ class Solution(object):
             return True
         else:
             return False
+
+mas = [1,1,2]
+mn = set(mas)
+mas1 = list(mn)
+print(len(mas1))
