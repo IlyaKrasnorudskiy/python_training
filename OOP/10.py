@@ -86,7 +86,6 @@ class Person:
 
 p = Person('Краснорудский Илья Викторович', 20, '1111 222222', 90.4)
 
-print(p.fio)
 p.age = 15
 print(p.age)
 print(p.serial)
