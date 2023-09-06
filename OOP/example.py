@@ -41,5 +41,4 @@ print(car.honk())
 print(motorcycle.start_engine())
 print(motorcycle.honk())
 
-D =
 
