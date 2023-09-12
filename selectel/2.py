@@ -1,4 +1,4 @@
-target = input()
+
 
 def calc_dist(target):
     target = abs(int(target))
@@ -7,6 +7,11 @@ def calc_dist(target):
     while target > dist or (dist - target) % 2 != 0:
             nMoves += 1
             dist += nMoves
+            print("dist: " + str(dist) + ", nMoves: " + str(nMoves))
     return nMoves
 
-print(calc_dist(target))
+
+
+for target in range(2, 100):
+    print("Target = " + str(target))
+    print(calc_dist(target))

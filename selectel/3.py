@@ -17,3 +17,4 @@ def proc_energy(spend, required):
 
 
 print(proc_energy(mas_spend, mas_required))
+print(0%2)
