@@ -2,15 +2,11 @@ import numpy as np
 
 ITERATION_LIMIT = 1000
 
-# initialize the matrix
-A = np.array([[10., -1., 2., 0.],
-              [-1., 11., -1., 3.],
-              [2., -1., 10., -1.],
-              [0.0, 3., -1., 8.]])
-# initialize the RHS vector
-b = np.array([6., 25., -11., 15.])
+A = np.array([[9., 2., 3.],
+              [2., 10., 5.],
+              [3., 5., 11.],])
+b = np.array([10., -3., 13.])
 
-# prints the system
 print("System:")
 for i in range(A.shape[0]):
     row = [f"{A[i, j]}*x{j + 1}" for j in range(A.shape[1])]
