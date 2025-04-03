@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="2b2ed59d-3a0e-4a85-9290-66fed10ec2bd" activeEnvironment="Default" name="NetworkEquipment" resourceRoot="" soapui-version="5.7.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="adbe50fd-b77a-429d-a5ec-aa18ff24d7c5" wsaVersion="NONE" name="EquipmentBinding" type="wsdl" bindingName="{http://example.com/equipment}EquipmentBinding" soapVersion="1_1" anonymous="optional" definition="file:/C:/Users/user/Desktop/myDocs/uni/4_курс/СПО/СПО%20ЛР2/eqipment.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="file:\C:\Users\user\Desktop\myDocs\uni\4_курс\СПО\СПО%20ЛР2\eqipment.wsdl"><con:part><con:url>file:\C:\Users\user\Desktop\myDocs\uni\4_курс\СПО\СПО%20ЛР2\eqipment.wsdl</con:url><con:content><![CDATA[<definitions targetNamespace="http://example.com/equipment" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://example.com/equipment">
+  <types>
+    <xsd:schema targetNamespace="http://example.com/equipment" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:element name="GetEquipmentRequest">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="id" type="xsd:integer"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="GetEquipmentResponse">
+        <xsd:complexType>
+          <xsd:choice>
+            <xsd:element name="equipment" type="tns:Equipment"/>
+            <xsd:element name="error" type="tns:Error"/>
+          </xsd:choice>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:complexType name="Equipment">
+        <xsd:sequence>
+          <xsd:element name="id" type="xsd:integer"/>
+          <xsd:element name="name" type="xsd:string"/>
+          <xsd:element name="type" type="xsd:string"/>
+          <xsd:element name="specs" type="xsd:string"/>
+          <xsd:element name="price" type="xsd:string" minOccurs="0"/>
+          <xsd:element name="url" type="xsd:anyURI"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="Error">
+        <xsd:sequence>
+          <xsd:element name="code" type="xsd:integer"/>
+          <xsd:element name="message" type="xsd:string"/>
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+  </types>
+  <message name="GetEquipmentRequest">
+    <part name="parameters" element="tns:GetEquipmentRequest"/>
+  </message>
+  <message name="GetEquipmentResponse">
+    <part name="parameters" element="tns:GetEquipmentResponse"/>
+  </message>
+  <portType name="EquipmentPort">
+    <operation name="GetEquipment">
+      <input message="tns:GetEquipmentRequest"/>
+      <output message="tns:GetEquipmentResponse"/>
+    </operation>
+  </portType>
+  <binding name="EquipmentBinding" type="tns:EquipmentPort">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="GetEquipment">
+      <soap:operation soapAction="http://example.com/equipment/GetEquipment"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="NetworkEquipmentService">
+    <port name="EquipmentPort" binding="tns:EquipmentBinding">
+      <soap:address location="http://mock-service.example/equipment"/>
+    </port>
+  </service>
+</definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:8088/mockEquipmentBinding</con:endpoint><con:endpoint>http://mock-service.example/equipment</con:endpoint></con:endpoints><con:operation id="ca213a5e-8731-47da-a778-b0564fa40a80" isOneWay="false" action="http://example.com/equipment/GetEquipment" name="GetEquipment" bindingOperationName="GetEquipment" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="597ae1f8-3e00-4f83-809f-e34204f6251d" name="Request 1" outgoingWss="" incomingWss=""><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8088/mockEquipmentBinding</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:equ="http://example.com/equipment">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <equ:GetEquipmentRequest>\r
+         <id>19825300</id>\r
+      </equ:GetEquipmentRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:username xsi:nil="true"/><con:password xsi:nil="true"/><con:domain xsi:nil="true"/><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://example.com/equipment/GetEquipment"/><con:wsrmConfig version="1.2"/></con:call><con:call id="89a407c9-b2a9-46db-aa75-85c67966ee56" name="Request 2"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8088/mockEquipmentBinding</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:equ="http://example.com/equipment">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <equ:GetEquipmentRequest>\r
+         <id>19825301</id>\r
+      </equ:GetEquipmentRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://example.com/equipment/GetEquipment"/><con:wsrmConfig version="1.2"/></con:call><con:call id="ceefc2ba-1df0-4f4c-8488-f4be823e85d3" name="Request 3"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8088/mockEquipmentBinding</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:equ="http://example.com/equipment">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <equ:GetEquipmentRequest>\r
+         <id>19825302</id>\r
+      </equ:GetEquipmentRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://example.com/equipment/GetEquipment"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:mockService id="f2c9a27b-4f2e-4c99-98b1-9550f376f9fe" port="8088" path="/mockEquipmentBinding" host="localhost" name="EquipmentBinding MockService" bindToHostOnly="false" docroot=""><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.mock.WsdlMockService@require-soap-action">false</con:setting></con:settings><con:properties/><con:mockOperation name="GetEquipment" id="f132a953-f3a8-48ef-94f7-4ba35aee7f9c" interface="EquipmentBinding" operation="GetEquipment"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" id="8aa1e1b1-9587-4162-acdc-f6ab69fcb1f4" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:equ="http://example.com/equipment">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <equ:GetEquipmentResponse>
+         <equipment>
+            <id>19825300</id>
+            <name>Xiaomi AIoT router AX3600</name>
+            <type>Wi-Fi Router</type>
+            <specs>3 LAN, 1000 mbit/s, IPv6</specs>
+            <price>7299 rub.</price>
+            <url>https://www.dns-shop.ru/product/23b40c34a6151b80/wi-fi-router-xiaomi-mi-aiot-router-ax3600/</url>
+         </equipment>
+         <error>
+            <code></code>
+            <message></message>
+         </error>
+      </equ:GetEquipmentResponse>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://example.com/equipment/GetEquipment"/></con:response><con:response name="Response 2" id="ce22d837-2ef5-4995-86e2-4b05e2b035d2" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:equ="http://example.com/equipment">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <equ:GetEquipmentResponse>
+         <equipment>
+            <id>19825301</id>
+            <name>ST-Link MC220L</name>
+            <type>Mediaconverter SFP to RJ4</type>
+            <specs>1 Gbit/s, Plug-and-play</specs>
+            <price>3290 rub.</price>
+            <url>https://www.dns-shop.ru/product/380da3a1bfe38a5a/mediakonverter-tp-link-mc220l/</url>
+         </equipment>
+         <error>
+            <code></code>
+            <message></message>
+         </error>
+      </equ:GetEquipmentResponse>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://example.com/equipment/GetEquipment"/></con:response><con:response name="Empty response" id="8008df29-2868-46cf-8504-ff2fe59fba3f" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:equ="http://example.com/equipment">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <equ:GetEquipmentResponse>
+         <equipment>
+            <id>19825302</id>
+            <name></name>
+            <type></type>
+            <specs></specs>
+            <price></price>
+            <url></url>
+         </equipment>
+         <error>
+            <code>NO_EQUIPMENT_IN_STOCK</code>
+            <message>Requested type of equipment is currently out of stock</message>
+         </error>
+      </equ:GetEquipmentResponse>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://example.com/equipment/GetEquipment"/></con:response><con:dispatchConfig/></con:mockOperation></con:mockService><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>
