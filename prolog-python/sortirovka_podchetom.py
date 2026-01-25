@@ -19,7 +19,7 @@ def counting_sort(arr):
 
     end_time = time.time()
     execution_time = end_time - start_time
-    return sorted_arr, execution_time
+    return counts, execution_time
 
-arr = [-4, 1000000, 5, 4, 3, -1000000]
+arr = [-4, 10, 5, 5, 3, -10]
 print(counting_sort(arr))
